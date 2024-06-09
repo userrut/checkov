@@ -19,8 +19,7 @@ class AzureDefenderDisabledForResManager(BaseResourceCheck):
         if properties and isinstance(properties, dict):
             pricing_tier = properties.get("pricingTier")
             if str(pricing_tier).lower() != "standard":
-                if str(conf.get("name", [None])).lower() == "arm":
-                    return CheckResult.FAILED
+                return CheckResult.FAILED
             return CheckResult.PASSED
 
     def get_evaluated_keys(self) -> list[str]:

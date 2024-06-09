@@ -16,12 +16,10 @@ class TestAzureDefenderDisabledForResManager(unittest.TestCase):
         summary = report.get_summary()
 
         passing_resources = {
-            'Microsoft.Security/pricings.Arm',
-            'Microsoft.Security/pricings.Dns',
-            'Microsoft.Security/pricings.VirtualMachine',
+            'Microsoft.Security/pricings.pass',
         }
         failing_resources = {
-            'Microsoft.Security/pricings.arm',
+            'Microsoft.Security/pricings.fail',
         }
         skipped_resources = {}
 
